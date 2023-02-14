@@ -6,6 +6,8 @@ import { useLocation } from "react-router-dom";
 
 function OrdersUser({ userData }) {
   const [orders, setOrders] = useState([]);
+  const [id, setId] = useState(null);
+
   const { t, i18n } = useTranslation();
   const search = useLocation().search;
   const token = new URLSearchParams(search);
@@ -34,17 +36,16 @@ function OrdersUser({ userData }) {
         },
       }
     );
+    setId(data.OperationId)
     window.location.href = data.urlPay;
   };
 
-  if (token.get("token")) {
+  
     const paymentStatus = async () => {
       const { data } = await axios.put(
-        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status?token=${token.get(
-          "token"
-        )}`
+        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status/${id}`
       );
-    };
+    
     paymentStatus();
   }
 
