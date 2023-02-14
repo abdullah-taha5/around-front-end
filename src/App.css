@@ -1,0 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+html:lang(ar) {
+  direction: rtl;
+}
+body {
+  font-family: "Roboto", sans-serif;
+}
+body:lang(ar) {
+  font-family: "Cairo", sans-serif;
+}
+a {
+  text-decoration: none !important;
+}
+
+/* Invoice Print */
+@media print {
+  .btn-print,
+  .header {
+    visibility: hidden;
+  }
+}
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+  background: #f7f7fc;
+}
+::-webkit-scrollbar-thumb {
+  background: #3498db;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+}
