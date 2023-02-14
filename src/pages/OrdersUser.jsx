@@ -45,7 +45,6 @@ function OrdersUser({ userData }) {
         )}`
       );
     };
-    window.location.href = "https://around-app.onrender.com/";
     paymentStatus();
   }
 
