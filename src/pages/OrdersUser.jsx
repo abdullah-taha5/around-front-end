@@ -4,7 +4,6 @@ import { useTranslation } from "react-i18next";
 import SidebarAccount from "../components/SidebarAccount";
 import { useLocation } from "react-router-dom";
 
-
 function OrdersUser({ userData }) {
   const [orders, setOrders] = useState([]);
   const { t, i18n } = useTranslation();
@@ -41,11 +40,13 @@ function OrdersUser({ userData }) {
   if (token.get("token")) {
     const paymentStatus = async () => {
       const { data } = await axios.put(
-        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status?token=${token.get("token")}`
+        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status?token=${token.get(
+          "token"
+        )}`
       );
     };
     paymentStatus();
-    window.location.href = "http://localhost:3000/user/orders"
+    window.location.href = "https://around-app.onrender.com/user/orders";
   }
 
   return (
