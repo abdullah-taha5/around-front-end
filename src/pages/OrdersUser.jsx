@@ -45,7 +45,7 @@ function OrdersUser({ userData }) {
       const { data } = await axios.get(
         `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status/${id}`
       );
-    
+    console.log(data);
   }
   paymentStatus();
 
