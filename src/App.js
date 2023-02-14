@@ -1,6 +1,6 @@
 import "./App.css";
 import Home from "./pages/Home";
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate, Redirect } from "react-router-dom";
 import SignIn from "./pages/Signin/SignIn.jsx";
 import SignUp from "./pages/Signup/SignUp";
 import jwt_decode from "jwt-decode";
@@ -25,6 +25,7 @@ import OrdersDriver from "./pages/Driver/SignIn/Orders/OrdersDriver";
 import OrdersUser from "./pages/OrdersUser";
 import MyLocation from "./pages/MyLocation";
 import SectionHero from "./pages/admin/FrontEndSettings/SectionHero";
+import Redirect from './pages/Redirect';
 
 function App() {
   const token = localStorage.getItem("token");
@@ -40,6 +41,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/redirect" element={<Redirect />} />
         <Route path="/signin" element={<SignIn />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/blogs" element={<Blogs />} />
