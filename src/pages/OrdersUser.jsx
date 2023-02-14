@@ -42,12 +42,12 @@ function OrdersUser({ userData }) {
 
   
     const paymentStatus = async () => {
-      const { data } = await axios.put(
+      const { data } = await axios.get(
         `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status/${id}`
       );
     
-    paymentStatus();
   }
+  paymentStatus();
 
   return (
     <Fragment>
