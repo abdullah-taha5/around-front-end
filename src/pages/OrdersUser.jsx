@@ -35,7 +35,7 @@ function OrdersUser({ userData }) {
       }
     );
     console.log(data);
-    window.location.href = data.urlPay;
+    // window.location.href = data.urlPay;
   };
 
   
