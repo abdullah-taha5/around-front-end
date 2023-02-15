@@ -34,18 +34,23 @@ function OrdersUser({ userData }) {
         },
       }
     );
-    console.log(data);
-    // window.location.href = data.urlPay;
+
+    window.location.href = data.urlPay;
   };
 
   
+  if (token.get("token")) {
     const paymentStatus = async () => {
-      const { data } = await axios.get(
-        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status/${id}`
+      const { data } = await axios.put(
+        `https://blue-violet-kingfisher-gear.cyclic.app/api/orders/pay/status?token=${token.get(
+          "token"
+        )}`
       );
-    console.log(data);
+    };
+    paymentStatus();
+    window.location.href = window.location.origin;
   }
-  paymentStatus();
+
 
   return (
     <Fragment>
