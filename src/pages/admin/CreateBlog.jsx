@@ -29,7 +29,7 @@ function CreateBlog({ userData }) {
     formData.append("description", description);
     formData.append("category", category);
 
-    await axios.post("https://blue-violet-kingfisher-gear.cyclic.app/api/blogs/", formData, {
+    await axios.post("https://blue-violet-kingfisher-gear.cyclic.app/api/blogs", formData, {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
