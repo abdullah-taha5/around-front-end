@@ -12,12 +12,7 @@ function Hero() {
   useEffect(() => {
     const getHero = async () => {
       const { data } = await axios.get(
-        "https://blue-violet-kingfisher-gear.cyclic.app/api/section/hero",
-        {
-          headers: {
-            Authorization: `Bearer ${localStorage.getItem("token")}`,
-          },
-        }
+        "https://blue-violet-kingfisher-gear.cyclic.app/api/section/hero"
       );
       setBackgroundUrl(data.background.url);
       setH1Text(data.h1);
